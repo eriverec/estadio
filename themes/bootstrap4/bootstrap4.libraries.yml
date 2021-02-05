@@ -9,7 +9,6 @@ global-styling:
   css:
     theme:
       css/style.css: {}
-      css/estadio.css: {}
 
 drupal.nav-tabs:
   version: VERSION

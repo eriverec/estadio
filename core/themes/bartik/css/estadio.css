@@ -1,0 +1,137 @@
+.path-estadio #sidebar-first {
+  display: none;
+}
+.layout-sidebar-first .main-content {
+  margin: 0px!important;
+  width: 100%!important;
+}
+.path-estadio .page-title {
+  font-family: arial;
+  text-transform: uppercase;
+  text-align: center;
+  background: #dc0105;
+  color: #fff;
+  margin: 10px 0% 5px;
+  padding: 5px;
+  font-size: 1.3em;
+  line-height: 1.8;
+}
+
+.ultimos-partidos {
+  text-align: center;
+  font-family: arial;
+}
+
+.ultimos-partidos .view-header{
+  background-color: #222328;
+  margin-bottom: 0%;
+  padding: 0.6em 0em 0.6em;
+  width: 100%;
+  color: white;
+  font-weight: 600;
+  line-height: 100%;
+  font-size: 13px;
+  margin-top: 15px;
+}
+.ultimos-partidos .view-content{
+  background: #DDE6EC;
+  padding-bottom: 14px;
+  padding-top: 10px;
+}
+.ultimos-partidos .view-content .views-row{
+  height: 110px;
+  border: none;
+  background-color: #F4F5F8;
+  color: black;
+  width: 153px !important;
+  display: inline-block;
+}
+.ultimos-partidos .partido {
+  padding-bottom: 5px;
+}
+.ultimos-partidos .equipo .logo_equipo{
+width: 20px;
+height: 20px;
+display: -webkit-inline-box;
+display: -webkit-inline-flex;
+display: -moz-inline-box;
+display: -ms-inline-flexbox;
+display: inline-flex;
+}
+.ultimos-partidos .equipo .nombre{
+display: -webkit-inline-box;
+display: -webkit-inline-flex;
+display: -moz-inline-box;
+display: -ms-inline-flexbox;
+display: inline-flex;
+width: 83px;
+margin-left: 2px;
+font-weight: 400;
+}
+.ultimos-partidos .fecha{
+width: 96%;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-color: #3c4151;
+margin: auto;
+margin-bottom: 5px;
+text-align: center;
+font-weight: bold;
+font-size: 14px;
+margin-top: 2px;
+margin-left: 3px;
+}
+.ultimos-partidos .equipo .resultado{
+display: -webkit-inline-box;
+display: -webkit-inline-flex;
+display: -moz-inline-box;
+display: -ms-inline-flexbox;
+display: inline-flex;
+width: 19px;
+font-weight: 600;
+}
+.ultimos-partidos .estado{
+width: 60%;
+background: #a81900;
+margin: auto;
+margin-bottom: 5px;
+text-align: center;
+font-weight: bold;
+font-size: 12px;
+margin-top: 5px;
+margin-left: 20%;
+color: white;
+text-transform: uppercase;
+}
+
+/*---*/
+
+.layout--twocol-section--50-50 {
+  margin: 0px -4px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: inherit!important;
+  font-family: arial;
+}
+.layout--twocol-section--50-50 .layout__region {
+  flex: 1 1 auto;
+  text-align: center;
+  margin: 4px;
+}
+.layout--twocol-section--50-50 .layout__region .block {
+  border: 2px solid #9a2500;
+  margin-bottom: 10px;
+}
+.layout--twocol-section--50-50 h2 {
+  background: #222328;
+  padding: 0.2em 0em 0.2em;
+  font-size: 1em;
+  height: 27px;
+  border-bottom: 2px solid #a81900;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  margin: 0px;
+  text-transform: uppercase;
+  line-height: 2;
+}
