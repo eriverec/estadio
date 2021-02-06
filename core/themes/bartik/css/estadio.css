@@ -2,8 +2,8 @@
   display: none;
 }
 .layout-sidebar-first .main-content {
-  margin: 0px!important;
-  width: 100%!important;
+  margin: 0px;
+  width: 100%;
 }
 .path-estadio .page-title {
   font-family: arial;
@@ -22,7 +22,7 @@
   font-family: arial;
 }
 
-.ultimos-partidos .view-header{
+.ultimos-partidos .view-header {
   background-color: #222328;
   margin-bottom: 0%;
   padding: 0.6em 0em 0.6em;
@@ -33,75 +33,75 @@
   font-size: 13px;
   margin-top: 15px;
 }
-.ultimos-partidos .view-content{
-  background: #DDE6EC;
+.ultimos-partidos .view-content {
+  background: #dde6ec;
   padding-bottom: 14px;
   padding-top: 10px;
 }
-.ultimos-partidos .view-content .views-row{
+.ultimos-partidos .view-content .views-row {
   height: 110px;
   border: none;
-  background-color: #F4F5F8;
+  background-color: #f4f5f8;
   color: black;
-  width: 153px !important;
+  width: 153px;
   display: inline-block;
 }
 .ultimos-partidos .partido {
   padding-bottom: 5px;
 }
-.ultimos-partidos .equipo .logo_equipo{
-width: 20px;
-height: 20px;
-display: -webkit-inline-box;
-display: -webkit-inline-flex;
-display: -moz-inline-box;
-display: -ms-inline-flexbox;
-display: inline-flex;
+.ultimos-partidos .equipo .logo_equipo {
+  width: 20px;
+  height: 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
-.ultimos-partidos .equipo .nombre{
-display: -webkit-inline-box;
-display: -webkit-inline-flex;
-display: -moz-inline-box;
-display: -ms-inline-flexbox;
-display: inline-flex;
-width: 83px;
-margin-left: 2px;
-font-weight: 400;
+.ultimos-partidos .equipo .nombre {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 83px;
+  margin-left: 2px;
+  font-weight: 400;
 }
-.ultimos-partidos .fecha{
-width: 96%;
-border-bottom-style: solid;
-border-bottom-width: 1px;
-border-color: #3c4151;
-margin: auto;
-margin-bottom: 5px;
-text-align: center;
-font-weight: bold;
-font-size: 14px;
-margin-top: 2px;
-margin-left: 3px;
+.ultimos-partidos .fecha {
+  width: 96%;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #3c4151;
+  margin: auto;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 2px;
+  margin-left: 3px;
 }
-.ultimos-partidos .equipo .resultado{
-display: -webkit-inline-box;
-display: -webkit-inline-flex;
-display: -moz-inline-box;
-display: -ms-inline-flexbox;
-display: inline-flex;
-width: 19px;
-font-weight: 600;
+.ultimos-partidos .equipo .resultado {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 19px;
+  font-weight: 600;
 }
-.ultimos-partidos .estado{
-width: 60%;
-background: #a81900;
-margin: auto;
-margin-bottom: 5px;
-text-align: center;
-font-weight: bold;
-font-size: 12px;
-margin-top: 5px;
-margin-left: 20%;
-color: white;
-text-transform: uppercase;
+.ultimos-partidos .estado {
+  width: 60%;
+  background: #a81900;
+  margin: auto;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 20%;
+  color: white;
+  text-transform: uppercase;
 }
 
 /*---*/
@@ -110,7 +110,7 @@ text-transform: uppercase;
   margin: 0px -4px;
   display: flex;
   flex-direction: row;
-  flex-wrap: inherit!important;
+  flex-wrap: inherit;
   font-family: arial;
 }
 .layout--twocol-section--50-50 .layout__region {
@@ -135,3 +135,122 @@ text-transform: uppercase;
   text-transform: uppercase;
   line-height: 2;
 }
+
+/*ERI-SECCION FECHAS - INICIO*/
+
+.block .content {
+  margin-top: 0px;
+}
+.fechas .partido {
+  padding-top: 10px;
+}
+
+.fechas.view-estadio .view-content .views-row {
+  border-bottom: 1px solid #cccccc;
+}
+
+.fechas .partido .contenido .equipo_a {
+  float: left;
+  margin-left: 25px;
+}
+
+.fechas .partido .contenido .equipo_b {
+  float: right;
+  margin-right: 10px;
+}
+
+.fechas .partido .contenido .equipo_a .logo_equipo_a,
+.fechas .partido .contenido .equipo_b .logo_equipo_b {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+}
+.fechas .partido .contenido .equipo_a .nombre_a,
+.fechas .partido .contenido .equipo_b .nombre_b {
+  display: inline-block;
+  vertical-align: 16px;
+  margin: 5px;
+  width: 95px;
+  font-size: 18px;
+}
+
+.fechas .partido .contenido .resultados {
+  font-size: 21pt;
+  vertical-align: 20px;
+  margin-left: -8px;
+  background: #dde6ec;
+  width: 20%;
+  padding: 5px;
+}
+.fechas .partido .contenido .resultados .resultado_a,
+.fechas .partido .contenido .resultados .resultado_b {
+  display: inline-block;
+}
+
+.fechas .partido .contenido .equipo_a,
+.fechas .partido .contenido .resultados,
+.fechas .partido .contenido .equipo_b {
+  display: inline-block;
+}
+
+.fechas .partido .fecha_estado .estado {
+  font-weight: 800;
+  padding: 5px;
+}
+
+.ultimos-partidos.mobile{
+  display: none;
+}
+
+/*MOBILE*/
+
+@media screen and (max-width: 600px) {
+  .fechas .partido .contenido {
+    width: 100%;
+  }
+  
+  .ultimos-partidos.mobile{
+    display: block;
+  }
+
+  .ultimos-partidos{
+    display: none;
+  }
+
+  .ultimos-partidos.mobile .view-content {
+    justify-content: center;
+    display: flex;
+  }
+
+  .ultimos-partidos.mobile .views-slideshow-controls-bottom .views_slideshow_controls_text_pause {
+    display: none;
+  }
+
+
+  .fechas .partido .contenido .equipo_a,
+  .fechas .partido .contenido .equipo_b {
+    margin-left: 10px;
+  }
+  .fechas .partido .contenido .equipo_a .logo_equipo_a,
+  .fechas .partido .contenido .equipo_b .logo_equipo_b {
+    width: 25px;
+    height: 25px;
+  }
+  .fechas .partido .contenido .equipo_a .nombre_a,
+  .fechas .partido .contenido .equipo_b .nombre_b {
+    width: 100px;
+    font-size: 12pt;
+    margin-left: -10px;
+    vertical-align: 10px;
+    margin-right: -6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout--twocol-section--50-50 {
+    flex-wrap: wrap;
+    display: block;
+  }
+}
+
+/*ERI-SECCION FECHAS - FIN*/
