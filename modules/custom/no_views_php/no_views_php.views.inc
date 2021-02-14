@@ -66,5 +66,12 @@ function no_views_php_views_data() {
             'id' => 'pts_views_field',
         ],
     ];
+    $data['views']['pj_views_field'] = [
+        'title' => t('League PJ'),
+        'help' => t('Campo de partidos jugados'),
+        'field' => [
+            'id' => 'pj_views_field',
+        ],
+    ];
     return $data;
 }

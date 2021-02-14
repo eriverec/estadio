@@ -56,7 +56,7 @@ class DgViewsField extends FieldPluginBase {
     // the desired output.
     $uid = trim($this->view->field['nid_2']->original_value);
     $pG = new CustomViewsField;
-    return $pG->partidosGolesDiferencia($uid);
+    return $pG->partidosGolesDiferencia($uid, $this->view->current_display);
   }
 
 }

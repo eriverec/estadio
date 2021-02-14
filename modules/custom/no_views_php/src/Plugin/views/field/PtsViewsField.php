@@ -56,7 +56,7 @@ class PtsViewsField extends FieldPluginBase {
     // the desired output.
     $uid = trim($this->view->field['nid_2']->original_value);
     $pG = new CustomViewsField;
-    return $pG->puntos($uid);
+    return $pG->puntos($uid, $this->view->current_display);
   }
 
 }

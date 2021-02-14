@@ -12,9 +12,9 @@ use Drupal\views\ResultRow;
  *
  * @ingroup views_field_handlers
  *
- * @ViewsField("gc_views_field")
+ * @ViewsField("pj_views_field")
  */
-class GcViewsField extends FieldPluginBase {
+class PjViewsField extends FieldPluginBase {
 
   /**
    * {@inheritdoc}
@@ -56,7 +56,7 @@ class GcViewsField extends FieldPluginBase {
     // the desired output.
     $uid = trim($this->view->field['nid_2']->original_value);
     $pG = new CustomViewsField;
-    return $pG->partidosGolesEnContra($uid, $this->view->current_display);
+    return $pG->partidosJugados($uid, $this->view->current_display);
   }
 
 }

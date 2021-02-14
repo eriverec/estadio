@@ -4,7 +4,7 @@
  * @file
  * Contains no_views_php.module.
  */
-
+use Drupal\views\ViewExecutable;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
@@ -22,3 +22,14 @@ function no_views_php_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/*function no_views_php_views_post_render(ViewExecutable $view) {
+  if($view->id() == 'estadio' && $view->current_display == 'etapa'){
+    dump($view->getHandler('etapa','field', 'pe_views_field'));
+    foreach ($view->result as $key => $value) {
+      //dump($value);
+      //dump($value->_entity->get('pe_views_field')->value);
+    }
+  }
+}
+*/

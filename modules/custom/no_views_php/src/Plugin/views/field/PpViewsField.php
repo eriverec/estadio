@@ -57,7 +57,7 @@ class PpViewsField extends FieldPluginBase {
     // the desired output.
     $uid = trim($this->view->field['nid_2']->original_value);
     $pG = new CustomViewsField;
-    return $pG->partidosPerdidos($uid);
+    return $pG->partidosPerdidos($uid, $this->view->current_display);
   }
 
 }

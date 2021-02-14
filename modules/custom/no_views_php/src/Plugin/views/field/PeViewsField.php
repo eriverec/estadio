@@ -36,7 +36,6 @@ class PeViewsField extends FieldPluginBase {
    */
   protected function defineOptions() {
     $options = parent::defineOptions();
-
     $options['hide_alter_empty'] = ['default' => FALSE];
     return $options;
   }
@@ -57,7 +56,7 @@ class PeViewsField extends FieldPluginBase {
     // the desired output.
     $uid = trim($this->view->field['nid_2']->original_value);
     $pG = new CustomViewsField;
-    return $pG->partidosEmpatados($uid);
+    return $pG->partidosEmpatados($uid, $this->view->current_display);
   }
 
 }

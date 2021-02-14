@@ -12,7 +12,14 @@ class CustomViewsField {
   public $puntoVictoria = 3;
   public $puntoEmpate = 1;
 
-  public function resultados($uid){
+  public function resultados($uid, $currentDisplay){
+    $competicionId = 2;
+    if($currentDisplay == "etapa"){
+      $etapaId = " and nfe.field_etapa_target_id = 1"; 
+    }else{
+      $etapaId = "";
+    }
+    
     $query = \Drupal::database()->query("SELECT n.nid, n.title, nfeldata.nid eqlid, nfevdata.nid eqvid, 
        nfeldata.title eqlocal, nfevdata.title eqvit,
        nfrl.field_resultado_local_value rl, nfrv.field_resultado_visitante_value rv,
@@ -44,12 +51,15 @@ class CustomViewsField {
     left join node_field_data nfevdata on nfev.field_equipo_visitante_target_id  = nfevdata.nid
     left join node__field_resultado_local nfrl on n.nid = nfrl.entity_id
     left join node__field_resultado_visitante nfrv on n.nid = nfrv.entity_id
-    where n.type = 'partido' and (nfel.field_equipo_local_target_id = {$uid} or nfev.field_equipo_visitante_target_id = {$uid})");
+    LEFT JOIN node__field_partido_competicion nfpc ON n.nid = nfpc.entity_id AND nfpc.deleted = '0'
+    left join node__field_etapa nfe ON n.nid = nfe.entity_id AND nfe.deleted = '0'
+    where n.type = 'partido' and (nfel.field_equipo_local_target_id = {$uid} or nfev.field_equipo_visitante_target_id = {$uid})
+    and nfpc.field_partido_competicion_target_id = {$competicionId} {$etapaId}");
     return $query->fetchAll();
   }
 
-  public function partidosGanados($uid){
-    $results = $this->resultados($uid);
+  public function partidosGanados($uid, $currentDisplay){
+    $results = $this->resultados($uid, $currentDisplay);
     $ganados = 0;
     foreach ($results as $key => $result) {
       $ganados = $ganados + $result->ganados;
@@ -57,8 +67,8 @@ class CustomViewsField {
     return $ganados;
   }
 
-  public function partidosEmpatados($uid){
-    $results = $this->resultados($uid);
+  public function partidosEmpatados($uid, $currentDisplay){
+    $results = $this->resultados($uid, $currentDisplay);
     $empatados = 0;
     foreach ($results as $key => $result) {
       $empatados = $empatados + $result->empatados;
@@ -66,8 +76,8 @@ class CustomViewsField {
     return $empatados;
   }
 
-  public function partidosPerdidos($uid){
-    $results = $this->resultados($uid);
+  public function partidosPerdidos($uid, $currentDisplay){
+    $results = $this->resultados($uid, $currentDisplay);
     $perdidos = 0;
     foreach ($results as $key => $result) {
       $perdidos = $perdidos + $result->perdidos;
@@ -75,8 +85,8 @@ class CustomViewsField {
     return $perdidos;
   }
 
-  public function partidosGolesAFavor($uid){
-    $results = $this->resultados($uid);
+  public function partidosGolesAFavor($uid, $currentDisplay){
+    $results = $this->resultados($uid, $currentDisplay);
     $gf = 0;
     foreach ($results as $key => $result) {
       if($result->eqlid == $uid){
@@ -88,8 +98,8 @@ class CustomViewsField {
     return $gf;
   }
 
-  public function partidosGolesEnContra($uid){
-    $results = $this->resultados($uid);
+  public function partidosGolesEnContra($uid, $currentDisplay){
+    $results = $this->resultados($uid, $currentDisplay);
     $gf = 0;
     foreach ($results as $key => $result) {
       if($result->eqlid == $uid){
@@ -101,15 +111,28 @@ class CustomViewsField {
     return $gf;
   }
 
-  public function partidosGolesDiferencia($uid){
-    $golesAFavor = $this->partidosGolesAFavor($uid);
-    $golesEnContra = $this->partidosGolesEnContra($uid);
+  public function partidosGolesDiferencia($uid, $currentDisplay){
+    $golesAFavor = $this->partidosGolesAFavor($uid, $currentDisplay);
+    $golesEnContra = $this->partidosGolesEnContra($uid, $currentDisplay);
     return $golesAFavor - $golesEnContra;
   }
 
-  public function puntos($uid){
-    $pGanados = $this->partidosGanados($uid);
-    $pEmpatados = $this->partidosEmpatados($uid);
+  public function puntos($uid, $currentDisplay){
+    $pGanados = $this->partidosGanados($uid, $currentDisplay);
+    $pEmpatados = $this->partidosEmpatados($uid, $currentDisplay);
     return ($pGanados * $this->puntoVictoria) + ($pEmpatados * $this->puntoEmpate);
+  }
+
+  public function partidosJugados($uid, $currentDisplay){
+    $results = $this->resultados($uid, $currentDisplay);
+    $p_jugados = 0;
+    foreach ($results as $key => $result) {
+      if($result->eqlid == $uid){
+        $p_jugados++;
+      }else if($result->eqvid == $uid){
+        $p_jugados++;
+      }
+    }
+    return $p_jugados;
   }
 }

@@ -56,7 +56,7 @@ class GfViewsField extends FieldPluginBase {
     // the desired output.
     $uid = trim($this->view->field['nid_2']->original_value);
     $pG = new CustomViewsField;
-    return $pG->partidosGolesAFavor($uid);
+    return $pG->partidosGolesAFavor($uid, $this->view->current_display);
   }
 
 }
