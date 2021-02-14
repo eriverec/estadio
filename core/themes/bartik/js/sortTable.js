@@ -7,6 +7,7 @@
  */
 function sortTableByColumn(table, column, asc = true) {
     const dirModifier = asc ? 1 : -1;
+    console.log(table);
     const tBody = table.tBodies[0];
     const rows = Array.from(tBody.querySelectorAll("tr"));
 
@@ -36,6 +37,9 @@ function sortTableByColumn(table, column, asc = true) {
     table.querySelector(`th:nth-child(${column + 1})`).classList.toggle("th-sort-desc", !asc);
 }
 
-var tablePosiciones = document.querySelector(".tabla-posiciones table");
-
-sortTableByColumn(tablePosiciones, 10, false);
+var tablePosiciones = document.querySelector(".tabla-posiciones-1 table");
+var tablePosiciones2 = document.querySelector(".tabla-posiciones-2 table");
+window.addEventListener("load", function () {
+    sortTableByColumn(tablePosiciones, 10, false);
+    sortTableByColumn(tablePosiciones2, 10, false);
+});
