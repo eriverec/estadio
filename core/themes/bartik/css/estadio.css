@@ -245,6 +245,11 @@
   display: none;
 }
 
+.slick--skin--boxed .slide__content:hover{
+  box-shadow: none;
+  border-color: transparent;
+}
+
 /*MOBILE*/
 
 @media screen and (max-width: 600px) {
