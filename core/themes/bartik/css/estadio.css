@@ -1,3 +1,6 @@
+:focus{
+  outline: transparent !important;
+}
 .path-estadio #sidebar-first {
   display: none;
 }
@@ -250,6 +253,13 @@
   border-color: transparent;
 }
 
+
+#quicktabs-container-tabla_de_posiciones table{
+  margin: 0px 0 !important;
+}
+
+
+
 /*MOBILE*/
 
 @media screen and (max-width: 600px) {
@@ -372,7 +382,7 @@
 /*ERI-SECCION FECHAS - FIN*/
 
 .on-the-gray .quicktabs-tabpage {
-  padding: 0.5em 0em 1em;
+  padding: 0em 0em 0em;
 }
 
 .tabla-posiciones .views-table th,
