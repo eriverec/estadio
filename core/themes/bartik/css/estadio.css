@@ -198,7 +198,50 @@
   padding: 5px;
 }
 
-.ultimos-partidos.mobile{
+#quicktabs-tabla_de_posiciones_mobile {
+  display: none;
+}
+
+.slick-arrow::before {
+  color: #a81900;
+}
+
+.slick-prev:before {
+  content: '\f104';
+  font-family: 'Font Awesome\ 5 Free';
+  padding: 0 10px;
+  font-weight: 900;
+  position: absolute;
+  font-size: 50px;
+  top: 0%;
+  left: 40%;
+}
+
+.slick-next:before {
+  content: '\f105';
+  font-family: 'Font Awesome\ 5 Free';
+  padding: 0 10px;
+  font-weight: 900;
+  position: absolute;
+  font-size: 50px;
+  top: 0%;
+  right: 40%;
+}
+
+.slick-arrow {
+  width: 100px;
+}
+
+.ultimos-partidos.mobile {
+  display: none;
+}
+
+.slick--skin--boxed .slide__content {
+  display: flex;
+  justify-content: center;
+}
+
+.ultimos-partidos.tablet {
   display: none;
 }
 
@@ -208,24 +251,17 @@
   .fechas .partido .contenido {
     width: 100%;
   }
-  
-  .ultimos-partidos.mobile{
-    display: block;
-  }
-
-  .ultimos-partidos{
-    display: none;
-  }
 
   .ultimos-partidos.mobile .view-content {
     justify-content: center;
     display: flex;
   }
 
-  .ultimos-partidos.mobile .views-slideshow-controls-bottom .views_slideshow_controls_text_pause {
+  .ultimos-partidos.mobile
+    .views-slideshow-controls-bottom
+    .views_slideshow_controls_text_pause {
     display: none;
   }
-
 
   .fechas .partido .contenido .equipo_a,
   .fechas .partido .contenido .equipo_b {
@@ -244,45 +280,203 @@
     vertical-align: 10px;
     margin-right: -6px;
   }
+
+  .ultimos-partidos.desktop {
+    display: none;
+  }
+
+  .ultimos-partidos.mobile {
+    display: block;
+  }
+
+  .slick-arrow {
+    width: 24px;
+  }
+
+  .slick-prev:before {
+    left: -25%;
+  }
+
+  .slick-next:before {
+    right: -25%;
+  }
+
+  .slick--skin--boxed .slide__content {
+    display: flex;
+    justify-content: center;
+  }
+
+  /*.slick-slider .slick-track,
+  .slick-slider .slick-list {
+    margin: 0px 5px;
+  }*/
+
+  #quicktabs-tabla_de_posiciones .views-field-field-logo,
+  #quicktabs-tabla_de_posiciones .views-field-gc-views-field,
+  #quicktabs-tabla_de_posiciones .views-field-gf-views-field,
+  #quicktabs-tabla_de_posiciones .views-field-pp-views-field,
+  #quicktabs-tabla_de_posiciones .views-field-pe-views-field,
+  #quicktabs-tabla_de_posiciones .views-field-pg-views-field {
+    display: none;
+  }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 48em) {
+  .slick--skin--boxed > .slick__slider > .slick-list {
+    margin: 0px 87px !important;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 768px) {
   .layout--twocol-section--50-50 {
     flex-wrap: wrap;
+    display: block;
+  }
+  .slick--skin--boxed > .slick__slider > .slick-list {
+    margin: 0px 98px !important;
+  }
+  .ultimos-partidos.mobile {
+    display: none;
+  }
+  .ultimos-partidos.desktop {
+    display: none;
+  }
+  .ultimos-partidos.tablet {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 1024px) {
+  .slick--skin--boxed > .slick__slider > .slick-list {
+    margin: 0px 44px !important;
+  }
+  .slick-arrow {
+    width: 50px;
+  }
+  .ultimos-partidos.mobile {
+    display: none;
+  }
+  .ultimos-partidos.desktop {
+    display: none;
+  }
+  .ultimos-partidos.tablet {
     display: block;
   }
 }
 
 /*ERI-SECCION FECHAS - FIN*/
 
-.tabla-posiciones .views-table th, .tabla-posiciones .views-table td {
-    text-align: center;
+.on-the-gray .quicktabs-tabpage {
+  padding: 0.5em 0em 1em;
+}
+
+.tabla-posiciones .views-table th,
+.tabla-posiciones .views-table td {
+  text-align: center;
 }
 .tabla-posiciones .views-table th {
-    border-bottom: 3px solid #ccc;
-    text-transform: uppercase;
+  border-bottom: 3px solid #ccc;
+  text-transform: uppercase;
 }
 .tabla-posiciones .views-table th {
-    border-bottom: 3px solid #ccc;
-    text-transform: uppercase;
-    background: #a11f00;
+  border-bottom: 3px solid #ccc;
+  text-transform: uppercase;
+  background: #a11f00;
 }
 .tabla-posiciones .views-table img {
-    width: 45px!important;
-    height: 45px!important;
+  width: 45px !important;
+  height: 45px !important;
 }
 
 .tabla-posiciones .view-header {
-    width: 100%;
-    background: #222328;
-    color: white;
-    font-weight: 600;
-    line-height: 1.5;
-    font-size: 1.25em;
-    height: 27px;
-    border-bottom: 2px solid #a81900;
-    padding: 0.2em 0em 0.2em;
-    font-family: arial;
-    text-align: center;
-    margin: 10px 0px -8px;
+  width: 100%;
+  background: #222328;
+  color: white;
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: 1.25em;
+  height: 27px;
+  border-bottom: 2px solid #a81900;
+  padding: 0.2em 0em 0.2em;
+  font-family: arial;
+  text-align: center;
+  margin: 10px 0px -8px;
+}
+
+#quicktabs-tabla_de_posiciones .quicktabs-tabs .positions_table.active a {
+  text-transform: uppercase;
+  background: #a11f00;
+  color: white;
+}
+
+#quicktabs-tabla_de_posiciones .quicktabs-tabs .positions_table a {
+  background-color: #222328;
+  text-transform: uppercase;
+  color: white;
+  font-size: 13px;
+}
+
+#quicktabs-tabla_de_posiciones_mobile
+  .quicktabs-tabs
+  .positions_table.active
+  a {
+  text-transform: uppercase;
+  background: #a11f00;
+  color: white;
+}
+
+#quicktabs-tabla_de_posiciones_mobile .quicktabs-tabs .positions_table a {
+  background-color: #222328;
+  text-transform: uppercase;
+  color: white;
+  font-size: 13px;
+}
+
+.block-quicktabs-blocktabla-de-posiciones {
+  font-family: arial;
+}
+
+.block-quicktabs-blocktabla-de-posiciones .on-the-gray {
+  padding: 0 0px;
+}
+
+.block-quicktabs-blocktabla-de-posiciones h2 {
+  background-color: #222328;
+  margin-bottom: 0%;
+  padding: 0.6em 0em 0.6em;
+  width: 100%;
+  color: white;
+  font-weight: 600;
+  line-height: 100%;
+  font-size: 13px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.block-inline-blockbasic .content .titulo__fechas {
+  background-color: #222328;
+  margin-bottom: 0%;
+  padding: 0.6em 0em 0.6em;
+  width: 100%;
+  color: white;
+  font-weight: 600;
+  line-height: 100%;
+  font-size: 13px;
+  margin-top: 15px;
+  text-align: center;
+  font-family: arial;
+}
+
+.block-grid .grid__content {
+  height: 110px;
+  border: none;
+  /*background-color: #f4f5f8;*/
+  color: black;
+  width: 153px;
+  display: inline-block;
+}
+
+.slick--skin--boxed .slide__content {
+  padding: 0px !important;
+  margin: 3px !important;
 }
