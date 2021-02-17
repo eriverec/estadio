@@ -11,13 +11,14 @@ class CustomViewsField {
 
   public $puntoVictoria = 3;
   public $puntoEmpate = 1;
+  public $etapaId = 1;
 
   public function resultados($uid, $currentDisplay){
     $competicionId = 2;
     if($currentDisplay == "etapa"){
-      $etapaId = " and nfe.field_etapa_target_id = 1"; 
+      $etapaCondition = " and nfe.field_etapa_target_id = {$this->etapaId}"; 
     }else{
-      $etapaId = "";
+      $etapaCondition = "";
     }
     
     $query = \Drupal::database()->query("SELECT n.nid, n.title, nfeldata.nid eqlid, nfevdata.nid eqvid, 
@@ -54,7 +55,7 @@ class CustomViewsField {
     LEFT JOIN node__field_partido_competicion nfpc ON n.nid = nfpc.entity_id AND nfpc.deleted = '0'
     left join node__field_etapa nfe ON n.nid = nfe.entity_id AND nfe.deleted = '0'
     where n.type = 'partido' and (nfel.field_equipo_local_target_id = {$uid} or nfev.field_equipo_visitante_target_id = {$uid})
-    and nfpc.field_partido_competicion_target_id = {$competicionId} {$etapaId}");
+    and nfpc.field_partido_competicion_target_id = {$competicionId} {$etapaCondition}");
     return $query->fetchAll();
   }
 
@@ -117,10 +118,20 @@ class CustomViewsField {
     return $golesAFavor - $golesEnContra;
   }
 
-  public function puntos($uid, $currentDisplay){
+  public function puntos($uid, $currentDisplay, $sancion_one = 0, $sancion_two = 0){
     $pGanados = $this->partidosGanados($uid, $currentDisplay);
     $pEmpatados = $this->partidosEmpatados($uid, $currentDisplay);
-    return ($pGanados * $this->puntoVictoria) + ($pEmpatados * $this->puntoEmpate);
+    $puntos = ($pGanados * $this->puntoVictoria) + ($pEmpatados * $this->puntoEmpate);
+    if($currentDisplay == "etapa"){
+      if($this->etapaId == 1){
+        $puntos = $puntos - $sancion_one;
+      }else{
+        $puntos = $puntos - $sancion_two;
+      }
+    }else{
+      $puntos = $puntos - ($sancion_one + $sancion_two);
+    }
+    return $puntos;
   }
 
   public function partidosJugados($uid, $currentDisplay){

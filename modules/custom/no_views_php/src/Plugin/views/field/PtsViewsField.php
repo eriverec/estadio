@@ -55,8 +55,10 @@ class PtsViewsField extends FieldPluginBase {
     // Include any namespace required to call the method required to generate
     // the desired output.
     $uid = trim($this->view->field['nid_2']->original_value);
+    $sancion_one = @trim($this->view->field['field_sancion_etapa1']->original_value);
+    $sancion_two = @trim($this->view->field['field_sancion_etapa2']->original_value);
     $pG = new CustomViewsField;
-    return $pG->puntos($uid, $this->view->current_display);
+    return $pG->puntos($uid, $this->view->current_display, $sancion_one, $sancion_two);
   }
 
 }
