@@ -267,6 +267,11 @@
     width: 100%;
   }
 
+  .layout--twocol-section--50-50 {
+    flex-wrap: wrap;
+    display: block;
+  }
+
   .ultimos-partidos.mobile .view-content {
     justify-content: center;
     display: flex;
