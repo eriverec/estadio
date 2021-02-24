@@ -175,6 +175,7 @@
   margin: 5px;
   width: 95px;
   font-size: 18px;
+  white-space: nowrap;
 }
 
 .fechas .partido .contenido .resultados {
