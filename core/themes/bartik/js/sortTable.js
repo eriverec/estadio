@@ -40,6 +40,9 @@ function sortTableByColumn(table, column, asc = true) {
 var tablePosiciones = document.querySelector(".tabla-posiciones-1 table");
 var tablePosiciones2 = document.querySelector(".tabla-posiciones-2 table");
 window.addEventListener("load", function () {
+    sortTableByColumn(tablePosiciones, 9, false);
     sortTableByColumn(tablePosiciones, 10, false);
+
+    sortTableByColumn(tablePosiciones2, 9, false);
     sortTableByColumn(tablePosiciones2, 10, false);
 });

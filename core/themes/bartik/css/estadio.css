@@ -502,7 +502,7 @@
   margin: 3px !important;
 }
 
-#header, .breadcrumb, .site-footer {
+.path-estadio #header, .path-estadio .breadcrumb, .path-estadio .site-footer {
   display: none;
 }
 
