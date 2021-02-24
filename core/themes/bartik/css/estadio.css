@@ -500,3 +500,8 @@
   padding: 0px !important;
   margin: 3px !important;
 }
+
+#header, .breadcrumb, .site-footer {
+  display: none;
+}
+
