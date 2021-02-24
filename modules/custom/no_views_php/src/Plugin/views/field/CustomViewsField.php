@@ -53,9 +53,11 @@ class CustomViewsField {
     left join node__field_resultado_local nfrl on n.nid = nfrl.entity_id
     left join node__field_resultado_visitante nfrv on n.nid = nfrv.entity_id
     LEFT JOIN node__field_partido_competicion nfpc ON n.nid = nfpc.entity_id AND nfpc.deleted = '0'
-    left join node__field_etapa nfe ON n.nid = nfe.entity_id AND nfe.deleted = '0'
+    left join node__field_etapa nfe ON n.nid = nfe.entity_id AND nfe.deleted = '0' 
+    left join node__field_estado_partido nfep on n.nid = nfep.entity_id AND nfep.deleted = '0'
     where n.type = 'partido' and (nfel.field_equipo_local_target_id = {$uid} or nfev.field_equipo_visitante_target_id = {$uid})
-    and nfpc.field_partido_competicion_target_id = {$competicionId} {$etapaCondition}");
+    and nfpc.field_partido_competicion_target_id = {$competicionId} {$etapaCondition}
+    and upper(nfep.field_estado_partido_value) = 'JUGADO'");
     return $query->fetchAll();
   }
 
