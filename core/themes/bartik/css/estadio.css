@@ -1,14 +1,16 @@
 :focus{
   outline: transparent !important;
 }
-.path-estadio #sidebar-first {
+.path-estadio #sidebar-first,
+.path-partidos #sidebar-first   {
   display: none;
 }
 .layout-sidebar-first .main-content {
   margin: 0px;
   width: 100%;
 }
-.path-estadio .page-title {
+.path-estadio .page-title,
+.path-partidos .page-title {
   font-family: arial;
   text-transform: uppercase;
   text-align: center;
