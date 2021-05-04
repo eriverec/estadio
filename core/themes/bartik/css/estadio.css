@@ -504,7 +504,13 @@
   margin: 3px !important;
 }
 
-.path-estadio #header, .path-estadio .breadcrumb, .path-estadio .site-footer {
+.path-estadio #header, 
+.path-estadio .breadcrumb, 
+.path-estadio .site-footer,
+
+.path-partidos #header, 
+.path-partidos .breadcrumb, 
+.path-partidos .site-footer {
   display: none;
 }
 
