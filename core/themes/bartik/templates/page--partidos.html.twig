@@ -55,13 +55,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css" integrity="sha512-shT5e46zNSD6lt4dlJHb+7LoUko9QZXTGlmWWx0qjI9UhQrElRb+Q5DM7SVte9G9ZNmovz2qIaV7IWv0xQkBkw==" crossorigin="anonymous" />
 <div id="page-wrapper">
   <div id="page">
-    <header id="header" class="header" role="banner">
+    {# <header id="header" class="header" role="banner">
       <div class="section layout-container clearfix">
         {{ page.secondary_menu }}
         {{ page.header }}
         {{ page.primary_menu }}
       </div>
-    </header>
+    </header> #}
     {% if page.highlighted %}
       <div class="highlighted">
         <aside class="layout-container section clearfix" role="complementary">
@@ -110,7 +110,7 @@
         </aside>
       </div>
     {% endif %}
-    <footer class="site-footer">
+    {# <footer class="site-footer">
       <div class="layout-container">
         {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
           <div class="site-footer__top clearfix">
@@ -126,7 +126,7 @@
           </div>
         {% endif %}
       </div>
-    </footer>
+    </footer> #}
   </div>
 </div>
 
